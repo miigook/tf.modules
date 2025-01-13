@@ -2,7 +2,7 @@ resource "aws_lb_target_group" "web-tg" {
   name     = "target-group"
   port     = 80
   protocol = "HTTP"
-  vpc_id   = data.output.vpc_id
+  vpc_id   = data.aws_vpc.app.id
 
   tags = {
     Name = "Target Group"
