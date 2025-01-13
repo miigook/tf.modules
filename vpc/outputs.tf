@@ -10,3 +10,8 @@ output "pub_subnets_ids" {
 output "priv_subnets_ids" {
   value = aws_subnet.priv[*].id
 }
+
+output "alb" {
+  value = aws_lb.dns_name
+  
+}
