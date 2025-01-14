@@ -6,7 +6,7 @@ resource "aws_autoscaling_group" "app-asg" {
   health_check_type         = "ELB"
   desired_capacity          = 3
   force_delete              = true
-  vpc_zone_identifier = [for subnet in data.output.priv_subnets_ids : subnet] # [aws_subnet.priv[0].id]
+  vpc_zone_identifier = [for subnet in var.app-subnets-priv : subnet] # [aws_subnet.priv[0].id]
 
   launch_template {
     id      = aws_launch_template.apache-lt.id

@@ -23,3 +23,6 @@ variable "all_open" {
   
 }
 
+variable "vpc-lb" {
+  
+}
